@@ -16,3 +16,33 @@ if (flag) {
 } else {
   console.log('Non puoi entrare');
 }
+
+// snack2
+
+// human score, machine score
+let humanScore = 0;
+let machineScore = 0;
+
+// facciamo una serie di lanci, e poi la somma dei punti
+const tossNumber = parseInt(prompt('Quanti lanci a questo giro?'));
+
+for (let i = 0; i < tossNumber; i++) {
+  let humanToss = Math.floor(Math.random() * 6) + 1;
+  let machineToss = Math.floor(Math.random() * 6) + 1;
+  console.log(`${humanToss} | ${machineToss}`);
+
+  if (humanToss > machineToss) {
+    humanScore++;
+  }
+  if (humanToss < machineToss) {
+    machineScore++;
+  }
+}
+
+if (humanScore > machineScore) {
+ console.log('Vince l\'uomo!');
+} else if (humanScore < machineScore) {
+  console.log('Skynet!!!');
+} else { 
+  console.log('Pareggio!');
+}
